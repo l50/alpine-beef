@@ -1,0 +1,23 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t fcolista/alpine-beef .
+
+test:
+	override:
+		- docker run -d -p 3000:3000 --name=beef fcolista/alpine-beef; sleep 10
+		- curl --retry 10 --retry-delay 5 -v http://localhost:3000/hook.js
+
+#deployment:
+  # master:
+  #   branch: master
+  #   commands:
+  #     - eval $(docker run gliderlabs/pagebuilder circleci-cmd)
+#  release:
+#    branch: release
+#    commands:
+#      - make release
