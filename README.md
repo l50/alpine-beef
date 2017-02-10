@@ -1,6 +1,13 @@
-# alpine-beef
 
-This Docker image allow to run the latest BeEF on Alpine Linux. 
+![BeEF-logo](https://raw.githubusercontent.com/l50/alpine-beef/master/logo.png) 
+
+alpine-beef
+===================
+
+[![CircleCI](https://circleci.com/gh/l50/alpine-beef.png?style=shield)](https://circleci.com/gh/l50/alpine-beef)
+
+This repository contains a **Dockerfile** of
+[BeEf](https://github.com/beefproject/beef).
 
 You can start the alpine-beef container with the commands:
 
@@ -8,11 +15,12 @@ You can start the alpine-beef container with the commands:
 docker run -t fcolista/alpine-beef
 ```
 
-This container exposes port TCP/3000: once you've run the container, look at the ip address BeEF is binding to:
+This container exposes port TCP/3000: once you've run the container,
+look at the ip address BeEF is binding to:
 
 Example:
 
-``` 
+```
 [14:16:25][*] Bind socket [imapeudora1] listening on [0.0.0.0:2000].
 [14:16:26][*] Browser Exploitation Framework (BeEF) 0.4.7.0-alpha
 [14:16:26]    |   Twit: @beefproject
@@ -42,12 +50,14 @@ Password: beef
 
 ##Note:
 
-If you are running with a grsec kernel, you should disable those features:
+If you are running with a grsec kernel, you should disable those
+features:
 ```
 chroot_deny_chmod
 chroot_deny_mknod
 ```
-On an Alpine host, you can do it by decommenting from ```/etc/conf.d/docker```:
+On an Alpine host, you can do it by decommenting from
+```/etc/conf.d/docker```:
 
 ```
 disable_grsec="chroot_deny_chmod chroot_deny_mknod"
@@ -58,4 +68,3 @@ rc-service docker restart
 ```
 
 Enjoy, Francesco
-
