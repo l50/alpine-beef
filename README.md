@@ -7,7 +7,7 @@ alpine-beef
 [![CircleCI](https://circleci.com/gh/l50/alpine-beef.png?style=shield)](https://circleci.com/gh/l50/alpine-beef)
 
 This repository contains a **Dockerfile** of
-[BeEf](https://github.com/beefproject/beef).
+[BeEF](https://github.com/beefproject/beef).
 
 You can start the alpine-beef container with the commands:
 
